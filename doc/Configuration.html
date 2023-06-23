@@ -1,0 +1,485 @@
+<!-- ?xml version='1.0' encoding='UTF-8'? -->
+<link href="/github-markdown-css/github-css.css" rel="stylesheet"/>
+<meta charset="utf-8" content="text/html"/>
+<div class="gist">
+<style> .gist-file { max-width: 25cm; margin: 0 auto; } </style>
+<style class="formula-style">
+        svg.gh-md-to-html-formula {
+            fill: black;
+        }
+    </style>
+<div class="gist-file"> <!-- This is the class that is responsible for the boxing! -->
+<div class="gist-data">
+<div class="js-gist-file-update-container js-task-list-container file-box">
+<div class="file" id="user-content-article-Configuration">
+<div class="Box-body readme blob js-code-block-container p-5 p-xl-6" id="user-content-file-docker-image-pull-md-readme" style="margin-left: 40px; margin-right: 40px; margin-top: 20px; margin-bottom: 20px">
+<article class="markdown-body entry-content container-lg" itemprop="text">
+<h1 id="user-content-scene-configuration"><a aria-hidden="true" class="anchor" href="#user-content-scene-configuration" id="user-content-scene-configuration" name="user-content-scene-configuration"><span aria-hidden="true" class="octicon octicon-link"></span></a>Scene Configuration</h1>
+<p>A scene is a set of pixels, controlled by the Zeppelin control software.
+To create a configuration file for the Zeppelin control software, create a <a href="https://yaml.org/" rel="nofollow">YAML</a> file, with the folloing structure:</p>
+<h2 id="user-content-simple-root-elements"><a aria-hidden="true" class="anchor" href="#user-content-simple-root-elements" id="user-content-simple-root-elements" name="user-content-simple-root-elements"><span aria-hidden="true" class="octicon octicon-link"></span></a>Simple root elements</h2>
+<p>At the root of the document include the following:</p>
+<table>
+<thead>
+<tr>
+<th>Key</th>
+<th>Value</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>name</td>
+<td>The name of the configuration</td>
+<td><code>name: Led Zeppelin</code></td>
+</tr>
+<tr>
+<td>leds_per_meter</td>
+<td>The density per meter of the LED strips used for the project</td>
+<td><code>leds_per_meter: 60</code></td>
+</tr>
+<tr>
+<td>web_root</td>
+<td>The root of the folder containing the static content for the project's web server, relative to the config file, execcutable,  or absolute. The folder should contain the index.html file supplied with the software to enable the web interface</td>
+<td><code>web_root:  web_files/</code></td>
+</tr>
+<tr>
+<td>web_port</td>
+<td>The port to server http requests on for the web interface.</td>
+<td><code>web_port:  8080 </code></td>
+</tr>
+<tr>
+<td>videos_dir (optional)</td>
+<td>The directory, relative to the config file or absolute, where videos shown in the VideoMode can be found. This parameter is optional</td>
+<td><code>videos_dir: videos/</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="user-content-base-types"><a aria-hidden="true" class="anchor" href="#user-content-base-types" id="user-content-base-types" name="user-content-base-types"><span aria-hidden="true" class="octicon octicon-link"></span></a>Base types</h2>
+<p>Some basic data structures used throughout the configuration, are available.</p>
+<h3 id="user-content-formula"><a aria-hidden="true" class="anchor" href="#user-content-formula" id="user-content-formula" name="user-content-formula"><span aria-hidden="true" class="octicon octicon-link"></span></a>formula</h3>
+<p>A formula is a string, that represents a number when evaluated. Some examples:</p>
+<ul>
+<li><code>5</code></li>
+<li><code>123.45</code></li>
+<li><code>18 + 2 * 9</code></li>
+</ul>
+<p>Formulas can use the whole ExprTK syntax, as long as the evaluate to a number at the end. The reference can be found <a href="http://www.partow.net/programming/exprtk/" rel="nofollow">here</a>.
+Formulas can also use parameters, defined in the <code>parameters</code> section..</p>
+<h2 id="user-content-xyz"><a aria-hidden="true" class="anchor" href="#user-content-xyz" id="user-content-xyz" name="user-content-xyz"><span aria-hidden="true" class="octicon octicon-link"></span></a>XYZ</h2>
+<p>A common data type is <code>XYZ</code>, which describes a point in 3D space. It can be described in two ways:</p>
+<ul>
+<li>
+<p>A list of 3 formulas. Examples:</p>
+<div class="highlight highlight-source-yaml"><pre><span class="pl-s">[10, 20 * 5, 0]</span></pre></div>
+<div class="highlight highlight-source-yaml"><pre>- <span class="pl-c1">10</span> 
+- <span class="pl-s"><span class="pl-pds">'</span>20 * 5<span class="pl-pds">'</span></span>
+- <span class="pl-c1">0</span></pre></div>
+</li>
+<li>
+<p>A dictionary of 3 elements, named <code>x</code>, <code>y</code>, and <code>z</code>. Examples:</p>
+<div class="highlight highlight-source-yaml"><pre><span class="pl-s">{x: 10, y: "20 * 5", z: 0]</span></pre></div>
+<div class="highlight highlight-source-yaml"><pre><span class="pl-ent">x</span>: <span class="pl-c1">10</span> 
+<span class="pl-ent">y</span>: <span class="pl-s">20 * 5</span>
+<span class="pl-ent">z</span>: <span class="pl-c1">0</span>
+</pre></div>
+</li>
+</ul>
+<h3 id="user-content-rgba"><a aria-hidden="true" class="anchor" href="#user-content-rgba" id="user-content-rgba" name="user-content-rgba"><span aria-hidden="true" class="octicon octicon-link"></span></a>RGBA</h3>
+<p>This type describes a collor, with mandatory red, green and blue values, and an optional alpha channel, which defaults to fully opaque.
+It can be described as a list, a dictionary, or as a number (used for hex representation).
+Examples:</p>
+<ul>
+<li>Yellow, with full opacity: <code>[255, 255, 0]</code>
+</li>
+<li>Orange, with 50% transperancy: <code>[255, 50, 0, 127]</code>
+</li>
+<li>Blue, 10% opacity:
+<div class="highlight highlight-source-yaml"><pre>- <span class="pl-c1">0</span>
+- <span class="pl-c1">0</span>
+- <span class="pl-c1">255</span>
+- <span class="pl-c1">25</span></pre></div>
+</li>
+<li>White, full opacity: <code>{r: 255, g: 255, b: 255}</code>
+</li>
+<li>Magenta, 50% transperancy:
+<div class="highlight highlight-source-yaml"><pre><span class="pl-ent">r</span>: <span class="pl-c1">255</span>
+<span class="pl-ent">g</span>: <span class="pl-c1">0</span>
+<span class="pl-ent">b</span>: <span class="pl-c1">255</span>
+<span class="pl-ent">a</span>: <span class="pl-c1">127</span></pre></div>
+</li>
+<li>Green, full opacity: <code>0x00FF00</code>
+</li>
+<li>Green, 50% opacity: <code>0x00FF0080</code>
+</li>
+</ul>
+<h2 id="user-content-configuration-elements"><a aria-hidden="true" class="anchor" href="#user-content-configuration-elements" id="user-content-configuration-elements" name="user-content-configuration-elements"><span aria-hidden="true" class="octicon octicon-link"></span></a>Configuration elements</h2>
+<p>The following elements can be added to control the behavor of the software:</p>
+<h3 id="user-content-admin_logins"><a aria-hidden="true" class="anchor" href="#user-content-admin_logins" id="user-content-admin_logins" name="user-content-admin_logins"><span aria-hidden="true" class="octicon octicon-link"></span></a>admin_logins</h3>
+<p>This element contains logins for the web interface (or any 3rd party UI that requires login).It is a dictionary of the following form:</p>
+<div class="highlight highlight-source-yaml"><pre><span class="pl-ent">admin_logins</span>:
+    <span class="pl-ent">&lt;username1&gt;</span>: <span class="pl-s">&lt;password1&gt;</span>
+    <span class="pl-ent">&lt;username2&gt;</span>: <span class="pl-s">&lt;password2&gt;</span></pre></div>
+<p>Example:</p>
+<div class="highlight highlight-source-yaml"><pre><span class="pl-ent">admin_logins</span>:
+    <span class="pl-ent">uriel</span>: <span class="pl-s">gardenstate</span>
+    <span class="pl-ent">andre</span>: <span class="pl-s">bah</span>
+    <span class="pl-ent">ronny</span>: <span class="pl-s">Ol1v3r</span></pre></div>
+<h3 id="user-content-parameters"><a aria-hidden="true" class="anchor" href="#user-content-parameters" id="user-content-parameters" name="user-content-parameters"><span aria-hidden="true" class="octicon octicon-link"></span></a>parameters</h3>
+<p><code>parameters</code> is a way to configure "variables" later available when using formulas to specify numbers.  When defining parameters you can use all previously declared parameters. Thisd is optional and can be ommited</p>
+<p>Example:</p>
+<div class="highlight highlight-source-yaml"><pre><span class="pl-ent">parameters</span>: 
+    <span class="pl-ent">distance</span>: <span class="pl-c1">1500</span>
+    <span class="pl-ent">height</span>: <span class="pl-s"><span class="pl-pds">'</span>distance / 2<span class="pl-pds">'</span></span>
+    <span class="pl-ent">volume</span>: <span class="pl-s"><span class="pl-pds">'</span>height * distance + 10<span class="pl-pds">'</span></span></pre></div>
+<h3 id="user-content-modes"><a aria-hidden="true" class="anchor" href="#user-content-modes" id="user-content-modes" name="user-content-modes"><span aria-hidden="true" class="octicon octicon-link"></span></a>modes</h3>
+<p>This section contains a list of modes to load. The software will look for those DLLs/SOs either as an absolute path, relative to the config file, or relative to the executable directory.</p>
+<p>Example:</p>
+<div class="highlight highlight-source-yaml"><pre><span class="pl-ent">modes</span>:
+    - <span class="pl-s">my_rainbow.so</span>
+    - <span class="pl-s">/home/pi/extra_modes/ai_mode.so</span></pre></div>
+<h3 id="user-content-extensions"><a aria-hidden="true" class="anchor" href="#user-content-extensions" id="user-content-extensions" name="user-content-extensions"><span aria-hidden="true" class="octicon octicon-link"></span></a>extensions</h3>
+<p>This section is a list of extensions loaded into the process. with none this software will not do much, as all communication with the UI or with LEDs is done through extensions.
+The software will look for those DLLs/SOs either as an absolute path, relative to the config file, or relative to the executable directory.</p>
+<p>The ones shipped with this software are:</p>
+<ul>
+<li>of_renderer - A User interface running on the local machine running this configuration file. Requires an interactive desktop, hence not suitable for headless Raspberry Pis.</li>
+<li>web_interface - Creates a web interface for the scene.</li>
+<li>easypixel - Communicates with the EasyPixel LED controller over network.</li>
+</ul>
+<p>Example:</p>
+<div class="highlight highlight-source-yaml"><pre><span class="pl-ent">extensions</span>: 
+    - <span class="pl-s">web_interface</span>
+    - <span class="pl-s">easypixel</span>
+    - <span class="pl-s">of_renderer</span></pre></div>
+<p>In case you want to have the same configuration file for both a desktop and a Raspberry Pi or any other headless computer, you can use the <code>--disable</code> command line argument that will
+disable the specified extension. For example, the following command will disable the GUI, enabling it to run on a headless machine:</p>
+<div class="highlight highlight-source-shell"><pre>./led_controller --config ../LedZeppelin.yaml --disable of_renderer</pre></div>
+<h3 id="user-content-power"><a aria-hidden="true" class="anchor" href="#user-content-power" id="user-content-power" name="user-content-power"><span aria-hidden="true" class="octicon octicon-link"></span></a>power</h3>
+<p>This optional section contains parameters used to calculate the estimated power consumption of the current setup.  It contains 3 elements:</p>
+<ul>
+<li>
+<code>pixel_idle_watts</code>: The power consumption, in watts, of each pixel.</li>
+<li>
+<code>pixel_full_watts</code>: The power consumption, in watts, of a pixel when turned on to full white.</li>
+<li>
+<code>calc_mode</code>: takes one of two values:
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Explenation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>max_channel_brightness</code></td>
+<td>Power is calculated according to the singke brightest channel of the LED. This is the behavior for WS2815</td>
+</tr>
+<tr>
+<td><code>sum_pixel_brightness</code></td>
+<td>Power is calculate according to all the channels. This is the behavior for WS2812</td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul>
+<h3 id="user-content-cameras"><a aria-hidden="true" class="anchor" href="#user-content-cameras" id="user-content-cameras" name="user-content-cameras"><span aria-hidden="true" class="octicon octicon-link"></span></a>cameras</h3>
+<p>This optional segment sets the list of cameras available in the 3d view. It is a map, where each key is the name of the camera, and the value is a dictionary with the following items:</p>
+<ul>
+<li>
+<code>position</code>: an <a href="#user-content-xyz">XYZ</a> with the position where the camera stands</li>
+<li>
+<code>look_at</code>: an <a href="#user-content-xyz">XYZ</a> describing the point in spcae the camera will be looking at</li>
+<li>
+<code>rotation</code>: an optinal number telling how many degreen to rotate the camera around the axis between <code>position</code> and <code>look_at</code>.</li>
+</ul>
+<p>Examples:</p>
+<div class="highlight highlight-source-yaml"><pre><span class="pl-ent">cameras</span>:
+    <span class="pl-ent">left side view</span>:
+        <span class="pl-ent">position</span>: <span class="pl-s">[0, 7000 ,-3000]</span>
+        <span class="pl-ent">look_at</span>: <span class="pl-s">[0,0,0]</span>
+
+    <span class="pl-ent">right side view</span>:
+        <span class="pl-ent">position</span>: <span class="pl-s">[0, -7000 ,-3000]</span>
+        <span class="pl-ent">look_at</span>: <span class="pl-s">[0,0,0]</span>
+        <span class="pl-ent">rotation</span>: <span class="pl-c1">180</span></pre></div>
+<h3 id="user-content-extra_elements"><a aria-hidden="true" class="anchor" href="#user-content-extra_elements" id="user-content-extra_elements" name="user-content-extra_elements"><span aria-hidden="true" class="octicon octicon-link"></span></a>extra_elements</h3>
+<p>An optional serction, describing extra 3d objects to be loaded into the 3d rendering of the scene. This is useful to see of the LED plan correlates to spaces or objects. The structure is: A map, where the key is the name of the object, and the values are:</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>path</code></td>
+<td>A path, relative to the configuration file or absolute, of the file with the 3d object to load. The supported formats can be found <a href="https://openframeworks.cc/documentation/ofxAssimpModelLoader/ofxAssimpModelLoader/" rel="nofollow">here</a>
+</td>
+</tr>
+<tr>
+<td><code>rotate</code></td>
+<td>An optional <a href="#user-content-xyz">XYZ</a> describing how many degrees to rotate around each axis, in order.</td>
+</tr>
+<tr>
+<td><code>move</code></td>
+<td>An optional <a href="#user-content-xyz">XYZ</a> describing how many millimeters to translate the object on each axis, in order.</td>
+</tr>
+<tr>
+<td><code>scale</code></td>
+<td>An optional <a href="#user-content-xyz">XYZ</a> with scale factors on each axis.</td>
+</tr>
+<tr>
+<td><code>color</code></td>
+<td>An optional <a href="#user-content-rgba">RGBA</a> With the color in which to draw the element.</td>
+</tr>
+<tr>
+<td><code>wireframe</code></td>
+<td>A boolean (true or false). If set, only the wireframe of the object will be drawn.</td>
+</tr>
+</tbody>
+</table>
+<p>Examples:</p>
+<div class="highlight highlight-source-yaml"><pre><span class="pl-ent">extra_elements</span>:
+    <span class="pl-ent">bus</span>:
+        <span class="pl-ent">path</span>: <span class="pl-s">bus.3ds</span>
+        <span class="pl-ent">rotate</span>: <span class="pl-s">[90,0,-90]</span>
+        <span class="pl-ent">move</span>: <span class="pl-s">[3100,1050,-4100]</span>
+<span class="pl-c"><span class="pl-c">#</span> Actual:        Y   Z   Xs</span>
+        <span class="pl-ent">scale</span>: <span class="pl-s">[28, 30, 20]</span>
+        <span class="pl-ent">color</span>: <span class="pl-s">[255,255,255,200]</span>
+
+    <span class="pl-ent">extra</span>:
+        <span class="pl-ent">path</span>: <span class="pl-s">bus_extra.stl</span>
+        <span class="pl-ent">move</span>: <span class="pl-s">[0,0,-1150]</span>
+        <span class="pl-ent">color</span>: <span class="pl-s">[150,150,150,255]</span></pre></div>
+<h2 id="user-content-leds-geometry"><a aria-hidden="true" class="anchor" href="#user-content-leds-geometry" id="user-content-leds-geometry" name="user-content-leds-geometry"><span aria-hidden="true" class="octicon octicon-link"></span></a>LEDS Geometry</h2>
+<p>LED geometry is defined in two parts, the <code>led_elements</code> section, which defines shapes that can be reuseed by other elements, or by the <code>pixels</code> section.</p>
+<p>Each geometry element is on of 4 types: pixel, line, arc or an existing element. All elements support the following details:</p>
+<ul>
+<li>
+<code>transform</code>: An optional list of transformations to perform on the pixels generated from this geometry. IT is described <a href="#user-content-transformations">here</a>
+</li>
+<li>
+<code>controller</code>, <code>strip</code> and <code>pixel</code> <strong>not supported in <code>elements</code>, only in <code>pixels</code></strong>: These 3 configuration items describe how the physical LED strip connects to the controller.
+controller and strip ID are mandatory, pixel is optional and descibes on which pixel the strip starts. If there are multiple geometry elements on the same strip they will be assumed to be
+daisy chaned in the order of the elements in the file.</li>
+</ul>
+<p>There are 4 supported geomtry type:</p>
+<h3 id="user-content-line"><a aria-hidden="true" class="anchor" href="#user-content-line" id="user-content-line" name="user-content-line"><span aria-hidden="true" class="octicon octicon-link"></span></a>line</h3>
+<p><code>line</code> describes a straight line of LEDs, spaced according to the <code>leds_per_meter</code> parameter.It takes to <a href="#user-content-xyz">XYZ</a> parameters named <code>start</code> and <code>end</code>.
+Examples:</p>
+<div class="highlight highlight-source-yaml"><pre><span class="pl-ent">led_elements</span>: 
+    <span class="pl-ent">test_element</span>: 
+        - <span class="pl-ent">line</span>: <span class="pl-s">{start: [6202.98, 261.51, 0], end: [5397.94, 854.73, 0]}</span>
+
+<span class="pl-ent">pixels</span>: 
+    - <span class="pl-ent">line</span>: <span class="pl-s">{start: [-2500, 0, 1652.367], end: [2500, 0, 1652.367], controller: 2, strip: 1, transform:  [ rotate: ["135 - 0  * 18",0,0]] }</span>
+    - <span class="pl-ent">line</span>: <span class="pl-s">{start: [-2200, 1168.4, -2562], end: [2100, 1168.4, -2562], controller: 2, strip: 24}</span></pre></div>
+<h3 id="user-content-arc"><a aria-hidden="true" class="anchor" href="#user-content-arc" id="user-content-arc" name="user-content-arc"><span aria-hidden="true" class="octicon octicon-link"></span></a>arc</h3>
+<p><code>arc</code> draws an arc, centered around the epoch at [0,0,0], and rotating around the Z axis. It will be populated according to the <code>leds_per_meter</code> parameter. Essencially laying down. to define it's size and angle, you need to supply
+two of the following 3 parameters, with the last one calculated on its own:</p>
+<ul>
+<li>
+<code>radius</code>: A number in millimeters describing the radius of the arc</li>
+<li>
+<code>degrees</code>: The angle of the arc. use 360 to draw a whole circle.</li>
+<li>
+<code>led_count</code>: The number of LEDs in the arc.</li>
+</ul>
+<p>As said before, arc are always create at the center of the scene. to move them, please use the <code>rotate</code> and <code>move</code> <a href="#user-content-tannsformations">transformations</a></p>
+<p>Examples:</p>
+<div class="highlight highlight-source-yaml"><pre><span class="pl-ent">led_elements</span>:
+    <span class="pl-c"><span class="pl-c">#</span> arc on top of the bus, 3/4 of the way</span>
+    <span class="pl-ent">center_arc</span>: 
+        - <span class="pl-ent">arc</span>: 
+            <span class="pl-ent">radius</span>: <span class="pl-c1">1677.76</span>
+            <span class="pl-ent">degrees</span>: <span class="pl-c1">270</span>
+            <span class="pl-ent">transform</span>:
+                - <span class="pl-ent">rotate</span>: <span class="pl-s">[0, 0, -135]</span>
+                - <span class="pl-ent">rotate</span>: <span class="pl-s">[0, 90, 0]</span>
+    <span class="pl-c"><span class="pl-c">#</span> Biggest full circle</span>
+    <span class="pl-ent">arc_1</span>:
+        - <span class="pl-ent">arc</span>:
+            <span class="pl-ent">radius</span>: <span class="pl-c1">1587.16</span>
+            <span class="pl-ent">degrees</span>: <span class="pl-c1">360</span>
+            <span class="pl-ent">transform</span>:
+                - <span class="pl-ent">rotate</span>: <span class="pl-s">[0, 0, -135]</span>
+                - <span class="pl-ent">rotate</span>: <span class="pl-s">[0, 90, 0]</span>
+                - <span class="pl-ent">move</span>: <span class="pl-s">[3535.88,0,0]</span>
+
+<span class="pl-ent">pixels</span>: 
+    - <span class="pl-ent">arc</span>: <span class="pl-s">{degrees: 360, led_count: 25,  controller: 1, strip: 1,  pixel: 152, transform: [ rotate: [0,0,225], rotate: [0, 90, 0], move: [-322, 0, 0] ] }</span>
+    - <span class="pl-ent">arc</span>: <span class="pl-s">{degrees: 360, led_count: 61,  controller: 1, strip: 1,  pixel: 91,  transform: [ rotate: [0,0,225], rotate: [0, 90, 0], move: [-275, 0, 0] ] }</span></pre></div>
+<h3 id="user-content-pixel"><a aria-hidden="true" class="anchor" href="#user-content-pixel" id="user-content-pixel" name="user-content-pixel"><span aria-hidden="true" class="octicon octicon-link"></span></a>pixel</h3>
+<p>Adds a single pixel to the geometry at a specified location. Examples:</p>
+<div class="highlight highlight-source-yaml"><pre><span class="pl-ent">led_elements</span>: 
+    <span class="pl-ent">test_pixel</span>: <span class="pl-s">[ pixel:  {location: [1000, 1000, 1000] } ]</span>
+<span class="pl-ent">pixels</span>: 
+    - <span class="pl-ent">pixel</span>: <span class="pl-s">{ location: [2000, 2000, 2000], controller: 2, strip: 3 }</span></pre></div>
+<h3 id="user-content-element"><a aria-hidden="true" class="anchor" href="#user-content-element" id="user-content-element" name="user-content-element"><span aria-hidden="true" class="octicon octicon-link"></span></a>element</h3>
+<p><code>element</code> means loading a predefined elemen from the <code>elements</code> block, specifined by the 'name' property. It can then be cofigured to connect to a controller in the <code>pixels</code> sections,
+and / or be transformed in either <code>elements</code> or the <code>pixels</code> sections. Examples:</p>
+<div class="highlight highlight-source-yaml"><pre><span class="pl-ent">led_elements</span>:
+    <span class="pl-c"><span class="pl-c">#</span> Curved line at the front of the zeppelin</span>
+    <span class="pl-ent">curved_line</span>: 
+        - <span class="pl-ent">line</span>: <span class="pl-s">{start: [6202.98, 261.51, 0], end: [5397.94, 854.73, 0]}</span>
+        - <span class="pl-ent">line</span>: <span class="pl-s">{start: [5397.94, 854.73, 0], end: [4499.07, 1292.95, 0]}</span>
+        - <span class="pl-ent">line</span>: <span class="pl-s">{start: [4499.07, 1292.95, 0], end: [3535.88, 1561.76, 0]}</span>
+        - <span class="pl-ent">line</span>: <span class="pl-s">{start: [3535.88, 1561.76, 0], end: [2539.99, 1652.36, 0]}</span>
+    
+    <span class="pl-c"><span class="pl-c">#</span> For the back of the zeppelin, mirror the front</span>
+    <span class="pl-ent">rev_curved_line</span>: <span class="pl-s">[ element: { name: curved_line,  transform: [ scale: [-1, 1, 1] ] } ]</span>
+
+<span class="pl-ent">pixels</span>: 
+    - <span class="pl-ent">element</span>: <span class="pl-s">{name: curved_line, controller: 1, strip: 1,  transform: [rotate: ["225 - 0  * 18", 0, 0]] }</span>
+    - <span class="pl-ent">element</span>: <span class="pl-s">{name: curved_line, controller: 1, strip: 2,  transform: [rotate: ["225 - 1  * 18", 0, 0]] }</span>
+
+    - <span class="pl-ent">element</span>: <span class="pl-s">{name: rev_curved_line, controller: 3, strip: 1,  transform: [rotate: ["225 - 0  * 18", 0, 0]] }</span>
+    - <span class="pl-ent">element</span>: <span class="pl-s">{name: rev_curved_line, controller: 3, strip: 2,  transform: [rotate: ["225 - 1  * 18", 0, 0]] }</span>
+</pre></div>
+<h3 id="user-content-transformations"><a aria-hidden="true" class="anchor" href="#user-content-transformations" id="user-content-transformations" name="user-content-transformations"><span aria-hidden="true" class="octicon octicon-link"></span></a>Transformations</h3>
+<p>Every geometry elements supports having a <code>transform</code> element, which contains a series of steps to perform on the specific geometry. The suppoerted transformations are:</p>
+<table>
+<thead>
+<tr>
+<th>transformation</th>
+<th>Effect</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>move</td>
+<td>Translate the geometry according to the specified XYZ</td>
+<td><code>transform: [ move: [100, 100, 100] ]</code></td>
+</tr>
+<tr>
+<td>rotate</td>
+<td>Rotates the geomtry around the axis. Rotations are done one after the other, on the X, Y and Z axis. if you want a different order, use more than one rotation.</td>
+<td><code>transform: [ rotate: [0, 0, 90], rotate: [90, 90, 0] ]</code></td>
+</tr>
+<tr>
+<td>scale</td>
+<td>Scales the geomtry. Takes an XYZ of the scale of multiplication for each axis.</td>
+<td><code>transform: [ sclae: [ 0.5, 2, -1] ] </code></td>
+</tr>
+<tr>
+<td>mirror</td>
+<td>Mirros the geometry along an axis. ! means to mirror, 0 means to leave as is.</td>
+<td><code>transform: [ mirror: [0, 0, 1] ] </code></td>
+</tr>
+</tbody>
+</table>
+<p>Several transformations can be done one after the other, regardless of type:</p>
+<pre><code>led_elements: 
+    arc_2:
+        - arc:
+            radius: 1318.35
+            degrees: 360
+            transform:
+                - mirror: [0, 1, 0]
+                - rotate: [0, 0, -135]
+                - rotate: [0, 90, 0]
+                - move: [4499.07,0,0]
+</code></pre>
+<h2 id="user-content-zones"><a aria-hidden="true" class="anchor" href="#user-content-zones" id="user-content-zones" name="user-content-zones"><span aria-hidden="true" class="octicon octicon-link"></span></a>Zones</h2>
+<p>One of the features supported by the software is divding the scene into seperate zones, and controlling each zone seperately.  To define this, create the optional <code>zones</code> element. The `zones element is a map, with the following structure:</p>
+<div class="highlight highlight-source-yaml"><pre><span class="pl-ent">zones</span>: 
+    <span class="pl-ent">&lt;zones configuration name&gt;</span>: 
+      - <span class="pl-ent">name</span>: <span class="pl-s">&lt;zone 1 name&gt;</span>
+        <span class="pl-ent">rule</span>: <span class="pl-s">&lt;zone 1 rule&gt;</span>
+      - <span class="pl-ent">name</span>: <span class="pl-s">&lt;zone 2 name&gt;</span>
+        <span class="pl-ent">rule</span>: <span class="pl-s">&lt;zone 2 rule&gt; </span>
+      - <span class="pl-ent">default</span>: <span class="pl-s">&lt;default zone name&gt;</span>
+    <span class="pl-ent">&lt;zones configuration name&gt;</span>:
+      - <span class="pl-ent">name</span>: <span class="pl-s">&lt;zone 2 name&gt;</span>
+        <span class="pl-ent">rule</span>: <span class="pl-s">&lt;zone 2 rule&gt; </span>
+      - <span class="pl-ent">default</span>: <span class="pl-s">&lt;default zone name&gt;</span></pre></div>
+<p>This structure defines zone configuration, where each one has a few zones where each has a name and a rule that evaluates weather a pixel belongs in this zone. the default field is the name of the zone of all the pixels that fit in no other zone.</p>
+<h3 id="user-content-zone-rules"><a aria-hidden="true" class="anchor" href="#user-content-zone-rules" id="user-content-zone-rules" name="user-content-zone-rules"><span aria-hidden="true" class="octicon octicon-link"></span></a>Zone rules:</h3>
+<p>We supprt 7 different types of rules:</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Parameter</th>
+<th>Description</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Or</td>
+<td>A list of other rules</td>
+<td>Includes the pixel if it matches on any one of the rules included</td>
+<td><code>rule: or: [ in_cube: {...}, in_sphere {...} ]</code></td>
+</tr>
+<tr>
+<td>And</td>
+<td>A list of other rules</td>
+<td>Includes the pixel if it matches on all of the rules included</td>
+<td><code>rule: and: [ in_cube: {...}, in_sphere {...} ]</code></td>
+</tr>
+<tr>
+<td>Not</td>
+<td>A rule</td>
+<td>Includes the pixel if it does not match the inside rule</td>
+<td><code>rule: not: [ in_cube: {...}]</code></td>
+</tr>
+<tr>
+<td>in_cube</td>
+<td>the bounds of a cube</td>
+<td>Include a pixel if it's inside of a specified cube</td>
+<td>`rule:in_cube: {left: 0, right: 100, bottom: -100 top: 100, back: -100, front: 100 }</td>
+</tr>
+<tr>
+<td>in_sphere</td>
+<td>an floating point radius and an XYZ center</td>
+<td>Includes all pixels that are within distance <code>radius</code> of the point <code>center</code>
+</td>
+<td><code>rule: in_sphere: { center: [0,0,0], radius: 1000 }</code></td>
+</tr>
+<tr>
+<td>in_cylinder</td>
+<td>A center, a height, and a radius</td>
+<td>Include the pixels within a cylinder who's center is at <code>center</code>, with the specified <code>height</code> and <code>radius</code>
+</td>
+<td><code>rule: in_cylinder: { center: [0,0,100], radius: 50, height: 100 }</code></td>
+</tr>
+<tr>
+<td>strip_range</td>
+<td>A list of the type: <code> { controlller: &lt;id&gt;, start: &lt;start&gt;, end: &lt;end&gt; }</code>
+</td>
+<td>This will include all the pixer connected to the specified controlles at the specified strip range.</td>
+<td><code>rule: strip_range: [ {controller: 1, start: 5, end: 5}, {controller: 2, start: 2, end: 6} ] </code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="user-content-example"><a aria-hidden="true" class="anchor" href="#user-content-example" id="user-content-example" name="user-content-example"><span aria-hidden="true" class="octicon octicon-link"></span></a>Example</h3>
+<p>Here is a complete Zones section:</p>
+<pre lang="ymal"><code>      front/back:
+        - name: Front
+          rule: 
+            in_cube: {left: 0, right: 100000, bottom: -100000, top: 100000, back: -100000, front: 100000 }
+        - default: Back
+
+    body/zeppelin:
+    - name: Body
+      rule: 
+        strip_range:
+          - {controller: 2, start: 20, end: 24}
+          - {controller: 1, start: 23, end: 24}
+          - {controller: 3, start: 21, end: 21}
+
+    - default: Zeppelin
+</code></pre>
+</article>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
