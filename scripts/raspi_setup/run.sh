@@ -38,7 +38,6 @@ while true; do
 	else
 
 		sudo setcap CAP_NET_BIND_SERVICE=+eip /home/zeppelin/zeppelin_prod/LEDZeppelin/led_controller 
-		sudo cp /home/zeppelin/zeppelin_prod/LEDZeppelin/*spdlog* /usr/lib/
 		/home/zeppelin/zeppelin_prod/LEDZeppelin/led_controller --config $CONFIG --disable 3d_renderer || true
 	fi
 
