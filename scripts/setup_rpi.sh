@@ -23,6 +23,11 @@ scp -r $ROOT/raspi_setup $USER@$IP:~/
 
 ssh $USER@$IP /home/$USER/raspi_setup/place_files.sh
 
-
+scp ~/opt/x-tools/armv6-rpi-linux-gnueabihf/armv6-rpi-linux-gnueabihf/sysroot/lib/libstdc++.so.6.0.31 $USER@$IP:~
+ssh $USER@$IP bash << 'EOF'
+    sudo mkdir -p /usr/local/lib/arm-linux-gnueabihf
+    sudo mv libstdc++.so.6.0.31 $_
+    sudo ldconfig
+EOF
 
 
