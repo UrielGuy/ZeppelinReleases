@@ -14,10 +14,10 @@
 <div class="file" id="user-content-article-Configuration">
 <div class="Box-body readme blob js-code-block-container p-5 p-xl-6" id="user-content-file-docker-image-pull-md-readme" style="margin-left: 40px; margin-right: 40px; margin-top: 20px; margin-bottom: 20px">
 <article class="markdown-body entry-content container-lg" itemprop="text">
-<h1 id="user-content-scene-configuration"><a aria-hidden="true" class="anchor" href="#user-content-scene-configuration" id="user-content-scene-configuration" name="user-content-scene-configuration"><span aria-hidden="true" class="octicon octicon-link"></span></a>Scene Configuration</h1>
+<h1 id="user-content-scene-configuration"><a aria-hidden="true" class="anchor" href="#user-content-scene-configuration" id="user-content-scene-configuration" name="user-content-scene-configuration" tabindex="-1"><span aria-hidden="true" class="octicon octicon-link"></span></a>Scene Configuration</h1>
 <p>A scene is a set of pixels, controlled by the Zeppelin control software.
 To create a configuration file for the Zeppelin control software, create a <a href="https://yaml.org/" rel="nofollow">YAML</a> file, with the folloing structure:</p>
-<h2 id="user-content-simple-root-elements"><a aria-hidden="true" class="anchor" href="#user-content-simple-root-elements" id="user-content-simple-root-elements" name="user-content-simple-root-elements"><span aria-hidden="true" class="octicon octicon-link"></span></a>Simple root elements</h2>
+<h2 id="user-content-simple-root-elements"><a aria-hidden="true" class="anchor" href="#user-content-simple-root-elements" id="user-content-simple-root-elements" name="user-content-simple-root-elements" tabindex="-1"><span aria-hidden="true" class="octicon octicon-link"></span></a>Simple root elements</h2>
 <p>At the root of the document include the following:</p>
 <table>
 <thead>
@@ -38,26 +38,11 @@ To create a configuration file for the Zeppelin control software, create a <a hr
 <td>The density per meter of the LED strips used for the project</td>
 <td><code>leds_per_meter: 60</code></td>
 </tr>
-<tr>
-<td>web_root</td>
-<td>The root of the folder containing the static content for the project's web server, relative to the config file, execcutable,  or absolute. The folder should contain the index.html file supplied with the software to enable the web interface</td>
-<td><code>web_root:  web_files/</code></td>
-</tr>
-<tr>
-<td>web_port</td>
-<td>The port to server http requests on for the web interface.</td>
-<td><code>web_port:  8080 </code></td>
-</tr>
-<tr>
-<td>videos_dir (optional)</td>
-<td>The directory, relative to the config file or absolute, where videos shown in the VideoMode can be found. This parameter is optional</td>
-<td><code>videos_dir: videos/</code></td>
-</tr>
 </tbody>
 </table>
-<h2 id="user-content-base-types"><a aria-hidden="true" class="anchor" href="#user-content-base-types" id="user-content-base-types" name="user-content-base-types"><span aria-hidden="true" class="octicon octicon-link"></span></a>Base types</h2>
+<h2 id="user-content-base-types"><a aria-hidden="true" class="anchor" href="#user-content-base-types" id="user-content-base-types" name="user-content-base-types" tabindex="-1"><span aria-hidden="true" class="octicon octicon-link"></span></a>Base types</h2>
 <p>Some basic data structures used throughout the configuration, are available.</p>
-<h3 id="user-content-formula"><a aria-hidden="true" class="anchor" href="#user-content-formula" id="user-content-formula" name="user-content-formula"><span aria-hidden="true" class="octicon octicon-link"></span></a>formula</h3>
+<h3 id="user-content-formula"><a aria-hidden="true" class="anchor" href="#user-content-formula" id="user-content-formula" name="user-content-formula" tabindex="-1"><span aria-hidden="true" class="octicon octicon-link"></span></a>formula</h3>
 <p>A formula is a string, that represents a number when evaluated. Some examples:</p>
 <ul>
 <li><code>5</code></li>
@@ -66,7 +51,7 @@ To create a configuration file for the Zeppelin control software, create a <a hr
 </ul>
 <p>Formulas can use the whole ExprTK syntax, as long as the evaluate to a number at the end. The reference can be found <a href="http://www.partow.net/programming/exprtk/" rel="nofollow">here</a>.
 Formulas can also use parameters, defined in the <code>parameters</code> section..</p>
-<h2 id="user-content-xyz"><a aria-hidden="true" class="anchor" href="#user-content-xyz" id="user-content-xyz" name="user-content-xyz"><span aria-hidden="true" class="octicon octicon-link"></span></a>XYZ</h2>
+<h2 id="user-content-xyz"><a aria-hidden="true" class="anchor" href="#user-content-xyz" id="user-content-xyz" name="user-content-xyz" tabindex="-1"><span aria-hidden="true" class="octicon octicon-link"></span></a>XYZ</h2>
 <p>A common data type is <code>XYZ</code>, which describes a point in 3D space. It can be described in two ways:</p>
 <ul>
 <li>
@@ -85,7 +70,7 @@ Formulas can also use parameters, defined in the <code>parameters</code> section
 </pre></div>
 </li>
 </ul>
-<h3 id="user-content-rgba"><a aria-hidden="true" class="anchor" href="#user-content-rgba" id="user-content-rgba" name="user-content-rgba"><span aria-hidden="true" class="octicon octicon-link"></span></a>RGBA</h3>
+<h3 id="user-content-rgba"><a aria-hidden="true" class="anchor" href="#user-content-rgba" id="user-content-rgba" name="user-content-rgba" tabindex="-1"><span aria-hidden="true" class="octicon octicon-link"></span></a>RGBA</h3>
 <p>This type describes a collor, with mandatory red, green and blue values, and an optional alpha channel, which defaults to fully opaque.
 It can be described as a list, a dictionary, or as a number (used for hex representation).
 Examples:</p>
@@ -113,149 +98,46 @@ Examples:</p>
 <li>Green, 50% opacity: <code>0x00FF0080</code>
 </li>
 </ul>
-<h2 id="user-content-configuration-elements"><a aria-hidden="true" class="anchor" href="#user-content-configuration-elements" id="user-content-configuration-elements" name="user-content-configuration-elements"><span aria-hidden="true" class="octicon octicon-link"></span></a>Configuration elements</h2>
+<h2 id="user-content-configuration-elements"><a aria-hidden="true" class="anchor" href="#user-content-configuration-elements" id="user-content-configuration-elements" name="user-content-configuration-elements" tabindex="-1"><span aria-hidden="true" class="octicon octicon-link"></span></a>Configuration elements</h2>
 <p>The following elements can be added to control the behavor of the software:</p>
-<h3 id="user-content-admin_logins"><a aria-hidden="true" class="anchor" href="#user-content-admin_logins" id="user-content-admin_logins" name="user-content-admin_logins"><span aria-hidden="true" class="octicon octicon-link"></span></a>admin_logins</h3>
-<p>This element contains logins for the web interface (or any 3rd party UI that requires login).It is a dictionary of the following form:</p>
-<div class="highlight highlight-source-yaml"><pre><span class="pl-ent">admin_logins</span>:
-    <span class="pl-ent">&lt;username1&gt;</span>: <span class="pl-s">&lt;password1&gt;</span>
-    <span class="pl-ent">&lt;username2&gt;</span>: <span class="pl-s">&lt;password2&gt;</span></pre></div>
-<p>Example:</p>
-<div class="highlight highlight-source-yaml"><pre><span class="pl-ent">admin_logins</span>:
-    <span class="pl-ent">uriel</span>: <span class="pl-s">gardenstate</span>
-    <span class="pl-ent">andre</span>: <span class="pl-s">bah</span>
-    <span class="pl-ent">ronny</span>: <span class="pl-s">Ol1v3r</span></pre></div>
-<h3 id="user-content-parameters"><a aria-hidden="true" class="anchor" href="#user-content-parameters" id="user-content-parameters" name="user-content-parameters"><span aria-hidden="true" class="octicon octicon-link"></span></a>parameters</h3>
+<h3 id="user-content-parameters"><a aria-hidden="true" class="anchor" href="#user-content-parameters" id="user-content-parameters" name="user-content-parameters" tabindex="-1"><span aria-hidden="true" class="octicon octicon-link"></span></a>parameters</h3>
 <p><code>parameters</code> is a way to configure "variables" later available when using formulas to specify numbers.  When defining parameters you can use all previously declared parameters. Thisd is optional and can be ommited</p>
 <p>Example:</p>
 <div class="highlight highlight-source-yaml"><pre><span class="pl-ent">parameters</span>: 
     <span class="pl-ent">distance</span>: <span class="pl-c1">1500</span>
     <span class="pl-ent">height</span>: <span class="pl-s"><span class="pl-pds">'</span>distance / 2<span class="pl-pds">'</span></span>
     <span class="pl-ent">volume</span>: <span class="pl-s"><span class="pl-pds">'</span>height * distance + 10<span class="pl-pds">'</span></span></pre></div>
-<h3 id="user-content-modes"><a aria-hidden="true" class="anchor" href="#user-content-modes" id="user-content-modes" name="user-content-modes"><span aria-hidden="true" class="octicon octicon-link"></span></a>modes</h3>
+<h3 id="user-content-modes"><a aria-hidden="true" class="anchor" href="#user-content-modes" id="user-content-modes" name="user-content-modes" tabindex="-1"><span aria-hidden="true" class="octicon octicon-link"></span></a>modes</h3>
 <p>This section contains a list of modes to load. The software will look for those DLLs/SOs either as an absolute path, relative to the config file, or relative to the executable directory.</p>
 <p>Example:</p>
 <div class="highlight highlight-source-yaml"><pre><span class="pl-ent">modes</span>:
     - <span class="pl-s">my_rainbow.so</span>
     - <span class="pl-s">/home/pi/extra_modes/ai_mode.so</span></pre></div>
-<h3 id="user-content-extensions"><a aria-hidden="true" class="anchor" href="#user-content-extensions" id="user-content-extensions" name="user-content-extensions"><span aria-hidden="true" class="octicon octicon-link"></span></a>extensions</h3>
+<h3 id="user-content-extensions"><a aria-hidden="true" class="anchor" href="#user-content-extensions" id="user-content-extensions" name="user-content-extensions" tabindex="-1"><span aria-hidden="true" class="octicon octicon-link"></span></a>extensions</h3>
 <p>This section is a list of extensions loaded into the process. with none this software will not do much, as all communication with the UI or with LEDs is done through extensions.
 The software will look for those DLLs/SOs either as an absolute path, relative to the config file, or relative to the executable directory.</p>
 <p>The ones shipped with this software are:</p>
 <ul>
-<li>of_renderer - A User interface running on the local machine running this configuration file. Requires an interactive desktop, hence not suitable for headless Raspberry Pis.</li>
+<li>opengl_renderer - A User interface running on the local machine running this configuration file. Requires an interactive desktop, hence not suitable for headless Raspberry Pis.</li>
 <li>web_interface - Creates a web interface for the scene.</li>
 <li>easypixel - Communicates with the EasyPixel LED controller over network.</li>
+<li>power_calc - Adds a real time power calculations</li>
+<li>command_line - Allows for manipulating parameters from the console.</li>
 </ul>
+<p>Each extension may contain extra configurations used by itself internally.</p>
 <p>Example:</p>
 <div class="highlight highlight-source-yaml"><pre><span class="pl-ent">extensions</span>: 
-    - <span class="pl-s">web_interface</span>
+    - <span class="pl-ent">web_interface</span>:
+        <span class="pl-ent">port</span>: <span class="pl-c1">80</span>
+        <span class="pl-ent">web_root</span>: <span class="pl-s">/home/pi/web_root</span>
+        <span class="pl-ent">admin_logins</span>:
+            <span class="pl-ent">zeppelin</span>: <span class="pl-s">password</span>
     - <span class="pl-s">easypixel</span>
-    - <span class="pl-s">of_renderer</span></pre></div>
+    - <span class="pl-s">opengl_renderer</span></pre></div>
 <p>In case you want to have the same configuration file for both a desktop and a Raspberry Pi or any other headless computer, you can use the <code>--disable</code> command line argument that will
 disable the specified extension. For example, the following command will disable the GUI, enabling it to run on a headless machine:</p>
-<div class="highlight highlight-source-shell"><pre>./led_controller --config ../LedZeppelin.yaml --disable of_renderer</pre></div>
-<h3 id="user-content-power"><a aria-hidden="true" class="anchor" href="#user-content-power" id="user-content-power" name="user-content-power"><span aria-hidden="true" class="octicon octicon-link"></span></a>power</h3>
-<p>This optional section contains parameters used to calculate the estimated power consumption of the current setup.  It contains 3 elements:</p>
-<ul>
-<li>
-<code>pixel_idle_watts</code>: The power consumption, in watts, of each pixel.</li>
-<li>
-<code>pixel_full_watts</code>: The power consumption, in watts, of a pixel when turned on to full white.</li>
-<li>
-<code>calc_mode</code>: takes one of two values:
-<table>
-<thead>
-<tr>
-<th>Value</th>
-<th>Explenation</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>max_channel_brightness</code></td>
-<td>Power is calculated according to the singke brightest channel of the LED. This is the behavior for WS2815</td>
-</tr>
-<tr>
-<td><code>sum_pixel_brightness</code></td>
-<td>Power is calculate according to all the channels. This is the behavior for WS2812</td>
-</tr>
-</tbody>
-</table>
-</li>
-</ul>
-<h3 id="user-content-cameras"><a aria-hidden="true" class="anchor" href="#user-content-cameras" id="user-content-cameras" name="user-content-cameras"><span aria-hidden="true" class="octicon octicon-link"></span></a>cameras</h3>
-<p>This optional segment sets the list of cameras available in the 3d view. It is a map, where each key is the name of the camera, and the value is a dictionary with the following items:</p>
-<ul>
-<li>
-<code>position</code>: an <a href="#user-content-xyz">XYZ</a> with the position where the camera stands</li>
-<li>
-<code>look_at</code>: an <a href="#user-content-xyz">XYZ</a> describing the point in spcae the camera will be looking at</li>
-<li>
-<code>rotation</code>: an optinal number telling how many degreen to rotate the camera around the axis between <code>position</code> and <code>look_at</code>.</li>
-</ul>
-<p>Examples:</p>
-<div class="highlight highlight-source-yaml"><pre><span class="pl-ent">cameras</span>:
-    <span class="pl-ent">left side view</span>:
-        <span class="pl-ent">position</span>: <span class="pl-s">[0, 7000 ,-3000]</span>
-        <span class="pl-ent">look_at</span>: <span class="pl-s">[0,0,0]</span>
-
-    <span class="pl-ent">right side view</span>:
-        <span class="pl-ent">position</span>: <span class="pl-s">[0, -7000 ,-3000]</span>
-        <span class="pl-ent">look_at</span>: <span class="pl-s">[0,0,0]</span>
-        <span class="pl-ent">rotation</span>: <span class="pl-c1">180</span></pre></div>
-<h3 id="user-content-extra_elements"><a aria-hidden="true" class="anchor" href="#user-content-extra_elements" id="user-content-extra_elements" name="user-content-extra_elements"><span aria-hidden="true" class="octicon octicon-link"></span></a>extra_elements</h3>
-<p>An optional serction, describing extra 3d objects to be loaded into the 3d rendering of the scene. This is useful to see of the LED plan correlates to spaces or objects. The structure is: A map, where the key is the name of the object, and the values are:</p>
-<table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>path</code></td>
-<td>A path, relative to the configuration file or absolute, of the file with the 3d object to load. The supported formats can be found <a href="https://openframeworks.cc/documentation/ofxAssimpModelLoader/ofxAssimpModelLoader/" rel="nofollow">here</a>
-</td>
-</tr>
-<tr>
-<td><code>rotate</code></td>
-<td>An optional <a href="#user-content-xyz">XYZ</a> describing how many degrees to rotate around each axis, in order.</td>
-</tr>
-<tr>
-<td><code>move</code></td>
-<td>An optional <a href="#user-content-xyz">XYZ</a> describing how many millimeters to translate the object on each axis, in order.</td>
-</tr>
-<tr>
-<td><code>scale</code></td>
-<td>An optional <a href="#user-content-xyz">XYZ</a> with scale factors on each axis.</td>
-</tr>
-<tr>
-<td><code>color</code></td>
-<td>An optional <a href="#user-content-rgba">RGBA</a> With the color in which to draw the element.</td>
-</tr>
-<tr>
-<td><code>wireframe</code></td>
-<td>A boolean (true or false). If set, only the wireframe of the object will be drawn.</td>
-</tr>
-</tbody>
-</table>
-<p>Examples:</p>
-<div class="highlight highlight-source-yaml"><pre><span class="pl-ent">extra_elements</span>:
-    <span class="pl-ent">bus</span>:
-        <span class="pl-ent">path</span>: <span class="pl-s">bus.3ds</span>
-        <span class="pl-ent">rotate</span>: <span class="pl-s">[90,0,-90]</span>
-        <span class="pl-ent">move</span>: <span class="pl-s">[3100,1050,-4100]</span>
-<span class="pl-c"><span class="pl-c">#</span> Actual:        Y   Z   Xs</span>
-        <span class="pl-ent">scale</span>: <span class="pl-s">[28, 30, 20]</span>
-        <span class="pl-ent">color</span>: <span class="pl-s">[255,255,255,200]</span>
-
-    <span class="pl-ent">extra</span>:
-        <span class="pl-ent">path</span>: <span class="pl-s">bus_extra.stl</span>
-        <span class="pl-ent">move</span>: <span class="pl-s">[0,0,-1150]</span>
-        <span class="pl-ent">color</span>: <span class="pl-s">[150,150,150,255]</span></pre></div>
-<h2 id="user-content-leds-geometry"><a aria-hidden="true" class="anchor" href="#user-content-leds-geometry" id="user-content-leds-geometry" name="user-content-leds-geometry"><span aria-hidden="true" class="octicon octicon-link"></span></a>LEDS Geometry</h2>
+<div class="highlight highlight-source-shell"><pre>./led_controller --config ../LedZeppelin.yaml --disable opengl_renderer</pre></div>
+<h2 id="user-content-leds-geometry"><a aria-hidden="true" class="anchor" href="#user-content-leds-geometry" id="user-content-leds-geometry" name="user-content-leds-geometry" tabindex="-1"><span aria-hidden="true" class="octicon octicon-link"></span></a>LEDS Geometry</h2>
 <p>LED geometry is defined in two parts, the <code>led_elements</code> section, which defines shapes that can be reuseed by other elements, or by the <code>pixels</code> section.</p>
 <p>Each geometry element is on of 4 types: pixel, line, arc or an existing element. All elements support the following details:</p>
 <ul>
@@ -268,7 +150,7 @@ controller and strip ID are mandatory, pixel is optional and descibes on which p
 daisy chaned in the order of the elements in the file.</li>
 </ul>
 <p>There are 4 supported geomtry type:</p>
-<h3 id="user-content-line"><a aria-hidden="true" class="anchor" href="#user-content-line" id="user-content-line" name="user-content-line"><span aria-hidden="true" class="octicon octicon-link"></span></a>line</h3>
+<h3 id="user-content-line"><a aria-hidden="true" class="anchor" href="#user-content-line" id="user-content-line" name="user-content-line" tabindex="-1"><span aria-hidden="true" class="octicon octicon-link"></span></a>line</h3>
 <p><code>line</code> describes a straight line of LEDs, spaced according to the <code>leds_per_meter</code> parameter.It takes to <a href="#user-content-xyz">XYZ</a> parameters named <code>start</code> and <code>end</code>.
 Examples:</p>
 <div class="highlight highlight-source-yaml"><pre><span class="pl-ent">led_elements</span>: 
@@ -278,7 +160,7 @@ Examples:</p>
 <span class="pl-ent">pixels</span>: 
     - <span class="pl-ent">line</span>: <span class="pl-s">{start: [-2500, 0, 1652.367], end: [2500, 0, 1652.367], controller: 2, strip: 1, transform:  [ rotate: ["135 - 0  * 18",0,0]] }</span>
     - <span class="pl-ent">line</span>: <span class="pl-s">{start: [-2200, 1168.4, -2562], end: [2100, 1168.4, -2562], controller: 2, strip: 24}</span></pre></div>
-<h3 id="user-content-arc"><a aria-hidden="true" class="anchor" href="#user-content-arc" id="user-content-arc" name="user-content-arc"><span aria-hidden="true" class="octicon octicon-link"></span></a>arc</h3>
+<h3 id="user-content-arc"><a aria-hidden="true" class="anchor" href="#user-content-arc" id="user-content-arc" name="user-content-arc" tabindex="-1"><span aria-hidden="true" class="octicon octicon-link"></span></a>arc</h3>
 <p><code>arc</code> draws an arc, centered around the epoch at [0,0,0], and rotating around the Z axis. It will be populated according to the <code>leds_per_meter</code> parameter. Essencially laying down. to define it's size and angle, you need to supply
 two of the following 3 parameters, with the last one calculated on its own:</p>
 <ul>
@@ -313,13 +195,13 @@ two of the following 3 parameters, with the last one calculated on its own:</p>
 <span class="pl-ent">pixels</span>: 
     - <span class="pl-ent">arc</span>: <span class="pl-s">{degrees: 360, led_count: 25,  controller: 1, strip: 1,  pixel: 152, transform: [ rotate: [0,0,225], rotate: [0, 90, 0], move: [-322, 0, 0] ] }</span>
     - <span class="pl-ent">arc</span>: <span class="pl-s">{degrees: 360, led_count: 61,  controller: 1, strip: 1,  pixel: 91,  transform: [ rotate: [0,0,225], rotate: [0, 90, 0], move: [-275, 0, 0] ] }</span></pre></div>
-<h3 id="user-content-pixel"><a aria-hidden="true" class="anchor" href="#user-content-pixel" id="user-content-pixel" name="user-content-pixel"><span aria-hidden="true" class="octicon octicon-link"></span></a>pixel</h3>
+<h3 id="user-content-pixel"><a aria-hidden="true" class="anchor" href="#user-content-pixel" id="user-content-pixel" name="user-content-pixel" tabindex="-1"><span aria-hidden="true" class="octicon octicon-link"></span></a>pixel</h3>
 <p>Adds a single pixel to the geometry at a specified location. Examples:</p>
 <div class="highlight highlight-source-yaml"><pre><span class="pl-ent">led_elements</span>: 
     <span class="pl-ent">test_pixel</span>: <span class="pl-s">[ pixel:  {location: [1000, 1000, 1000] } ]</span>
 <span class="pl-ent">pixels</span>: 
     - <span class="pl-ent">pixel</span>: <span class="pl-s">{ location: [2000, 2000, 2000], controller: 2, strip: 3 }</span></pre></div>
-<h3 id="user-content-element"><a aria-hidden="true" class="anchor" href="#user-content-element" id="user-content-element" name="user-content-element"><span aria-hidden="true" class="octicon octicon-link"></span></a>element</h3>
+<h3 id="user-content-element"><a aria-hidden="true" class="anchor" href="#user-content-element" id="user-content-element" name="user-content-element" tabindex="-1"><span aria-hidden="true" class="octicon octicon-link"></span></a>element</h3>
 <p><code>element</code> means loading a predefined elemen from the <code>elements</code> block, specifined by the 'name' property. It can then be cofigured to connect to a controller in the <code>pixels</code> sections,
 and / or be transformed in either <code>elements</code> or the <code>pixels</code> sections. Examples:</p>
 <div class="highlight highlight-source-yaml"><pre><span class="pl-ent">led_elements</span>:
@@ -340,7 +222,7 @@ and / or be transformed in either <code>elements</code> or the <code>pixels</cod
     - <span class="pl-ent">element</span>: <span class="pl-s">{name: rev_curved_line, controller: 3, strip: 1,  transform: [rotate: ["225 - 0  * 18", 0, 0]] }</span>
     - <span class="pl-ent">element</span>: <span class="pl-s">{name: rev_curved_line, controller: 3, strip: 2,  transform: [rotate: ["225 - 1  * 18", 0, 0]] }</span>
 </pre></div>
-<h3 id="user-content-transformations"><a aria-hidden="true" class="anchor" href="#user-content-transformations" id="user-content-transformations" name="user-content-transformations"><span aria-hidden="true" class="octicon octicon-link"></span></a>Transformations</h3>
+<h3 id="user-content-transformations"><a aria-hidden="true" class="anchor" href="#user-content-transformations" id="user-content-transformations" name="user-content-transformations" tabindex="-1"><span aria-hidden="true" class="octicon octicon-link"></span></a>Transformations</h3>
 <p>Every geometry elements supports having a <code>transform</code> element, which contains a series of steps to perform on the specific geometry. The suppoerted transformations are:</p>
 <table>
 <thead>
@@ -385,7 +267,7 @@ and / or be transformed in either <code>elements</code> or the <code>pixels</cod
                 - rotate: [0, 90, 0]
                 - move: [4499.07,0,0]
 </code></pre>
-<h2 id="user-content-zones"><a aria-hidden="true" class="anchor" href="#user-content-zones" id="user-content-zones" name="user-content-zones"><span aria-hidden="true" class="octicon octicon-link"></span></a>Zones</h2>
+<h2 id="user-content-zones"><a aria-hidden="true" class="anchor" href="#user-content-zones" id="user-content-zones" name="user-content-zones" tabindex="-1"><span aria-hidden="true" class="octicon octicon-link"></span></a>Zones</h2>
 <p>One of the features supported by the software is divding the scene into seperate zones, and controlling each zone seperately.  To define this, create the optional <code>zones</code> element. The `zones element is a map, with the following structure:</p>
 <div class="highlight highlight-source-yaml"><pre><span class="pl-ent">zones</span>: 
     <span class="pl-ent">&lt;zones configuration name&gt;</span>: 
@@ -399,7 +281,7 @@ and / or be transformed in either <code>elements</code> or the <code>pixels</cod
         <span class="pl-ent">rule</span>: <span class="pl-s">&lt;zone 2 rule&gt; </span>
       - <span class="pl-ent">default</span>: <span class="pl-s">&lt;default zone name&gt;</span></pre></div>
 <p>This structure defines zone configuration, where each one has a few zones where each has a name and a rule that evaluates weather a pixel belongs in this zone. the default field is the name of the zone of all the pixels that fit in no other zone.</p>
-<h3 id="user-content-zone-rules"><a aria-hidden="true" class="anchor" href="#user-content-zone-rules" id="user-content-zone-rules" name="user-content-zone-rules"><span aria-hidden="true" class="octicon octicon-link"></span></a>Zone rules:</h3>
+<h3 id="user-content-zone-rules"><a aria-hidden="true" class="anchor" href="#user-content-zone-rules" id="user-content-zone-rules" name="user-content-zone-rules" tabindex="-1"><span aria-hidden="true" class="octicon octicon-link"></span></a>Zone rules:</h3>
 <p>We supprt 7 different types of rules:</p>
 <table>
 <thead>
@@ -431,9 +313,9 @@ and / or be transformed in either <code>elements</code> or the <code>pixels</cod
 </tr>
 <tr>
 <td>in_cube</td>
-<td>the bounds of a cube</td>
+<td>The bounds of a cube</td>
 <td>Include a pixel if it's inside of a specified cube</td>
-<td>`rule:in_cube: {left: 0, right: 100, bottom: -100 top: 100, back: -100, front: 100 }</td>
+<td><code>rule:in_cube: {left: 0, right: 100, bottom: -100 top: 100, back: -100, front: 100 }</code></td>
 </tr>
 <tr>
 <td>in_sphere</td>
@@ -458,7 +340,7 @@ and / or be transformed in either <code>elements</code> or the <code>pixels</cod
 </tr>
 </tbody>
 </table>
-<h3 id="user-content-example"><a aria-hidden="true" class="anchor" href="#user-content-example" id="user-content-example" name="user-content-example"><span aria-hidden="true" class="octicon octicon-link"></span></a>Example</h3>
+<h3 id="user-content-example"><a aria-hidden="true" class="anchor" href="#user-content-example" id="user-content-example" name="user-content-example" tabindex="-1"><span aria-hidden="true" class="octicon octicon-link"></span></a>Example</h3>
 <p>Here is a complete Zones section:</p>
 <pre lang="ymal"><code>      front/back:
         - name: Front
@@ -475,6 +357,156 @@ and / or be transformed in either <code>elements</code> or the <code>pixels</cod
           - {controller: 3, start: 21, end: 21}
 
     - default: Zeppelin
+</code></pre>
+<h2 id="user-content-extensions-configurations"><a aria-hidden="true" class="anchor" href="#user-content-extensions-configurations" id="user-content-extensions-configurations" name="user-content-extensions-configurations" tabindex="-1"><span aria-hidden="true" class="octicon octicon-link"></span></a>Extensions Configurations</h2>
+<h3 id="user-content-opengl_renderer"><a aria-hidden="true" class="anchor" href="#user-content-opengl_renderer" id="user-content-opengl_renderer" name="user-content-opengl_renderer" tabindex="-1"><span aria-hidden="true" class="octicon octicon-link"></span></a>opengl_renderer</h3>
+<p>When including the <code>opengl_renderer</code> it may include the following configuration:</p>
+<h4 id="user-content-cameras"><a aria-hidden="true" class="anchor" href="#user-content-cameras" id="user-content-cameras" name="user-content-cameras" tabindex="-1"><span aria-hidden="true" class="octicon octicon-link"></span></a>cameras</h4>
+<p>This optional segment sets the list of cameras available in the 3d view. It is a map, where each key is the name of the camera, and the value is a dictionary with the following items:</p>
+<ul>
+<li>
+<code>position</code>: an <a href="#user-content-xyz">XYZ</a> with the position where the camera stands</li>
+<li>
+<code>look_at</code>: an <a href="#user-content-xyz">XYZ</a> describing the point in spcae the camera will be looking at</li>
+<li>
+<code>rotation</code>: an optinal number telling how many degreen to rotate the camera around the axis between <code>position</code> and <code>look_at</code>.</li>
+</ul>
+<p>Examples:</p>
+<div class="highlight highlight-source-yaml"><pre><span class="pl-ent">extensions</span>:
+    - <span class="pl-ent">opengl_renderer</span>:
+        <span class="pl-ent">cameras</span>:
+            <span class="pl-ent">left side view</span>:
+                <span class="pl-ent">position</span>: <span class="pl-s">[0, 7000 ,-3000]</span>
+                <span class="pl-ent">look_at</span>: <span class="pl-s">[0,0,0]</span>
+
+            <span class="pl-ent">right side view</span>:
+                <span class="pl-ent">position</span>: <span class="pl-s">[0, -7000 ,-3000]</span>
+                <span class="pl-ent">look_at</span>: <span class="pl-s">[0,0,0]</span>
+                <span class="pl-ent">rotation</span>: <span class="pl-c1">180</span></pre></div>
+<h4 id="user-content-extra_elements"><a aria-hidden="true" class="anchor" href="#user-content-extra_elements" id="user-content-extra_elements" name="user-content-extra_elements" tabindex="-1"><span aria-hidden="true" class="octicon octicon-link"></span></a>extra_elements</h4>
+<p>An optional serction, describing extra 3d objects to be loaded into the 3d rendering of the scene. This is useful to see of the LED plan correlates to spaces or objects. The structure is: A map, where the key is the name of the object, and the values are:</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>path</code></td>
+<td>A path, relative to the configuration file or absolute, of the file with the 3d object to load. The supported formats can be found <a href="https://openframeworks.cc/documentation/ofxAssimpModelLoader/ofxAssimpModelLoader/" rel="nofollow">here</a>
+</td>
+</tr>
+<tr>
+<td><code>transform</code></td>
+<td>A transformation of the object loaded</td>
+</tr>
+<tr>
+<td><code>color</code></td>
+<td>An optional <a href="#user-content-rgba">RGBA</a> With the color in which to draw the element.</td>
+</tr>
+<tr>
+<td><code>wireframe</code></td>
+<td>A boolean (true or false). If set, only the wireframe of the object will be drawn.</td>
+</tr>
+</tbody>
+</table>
+<p>Examples:</p>
+<div class="highlight highlight-source-yaml"><pre><span class="pl-ent">extensions</span>:
+    - <span class="pl-ent">opengl_renderer</span>:
+        <span class="pl-ent">extra_elements</span>:
+            <span class="pl-ent">bus</span>:
+                <span class="pl-ent">path</span>: <span class="pl-s">bus.3ds</span>
+                <span class="pl-ent">color</span>: <span class="pl-s">[255, 255, 255, 200]</span>
+                <span class="pl-ent">transform</span>:
+                    - <span class="pl-ent">scale</span>: <span class="pl-s">[28, 30, 20]</span>
+                    - <span class="pl-ent">rotate</span>: <span class="pl-s">[90, 0, -90]</span>
+                    - <span class="pl-ent">move</span>: <span class="pl-s">[3100, 1050, -4100]</span>
+
+            <span class="pl-ent">extra</span>:
+                <span class="pl-ent">path</span>: <span class="pl-s">bus_extra.stl</span>
+                <span class="pl-ent">color</span>: <span class="pl-s">[150, 150, 150, 255]</span>
+                <span class="pl-ent">transform</span>:
+                    - <span class="pl-ent">move</span>: <span class="pl-s">[0, 0, -1500]</span></pre></div>
+<h3 id="user-content-web_interface"><a aria-hidden="true" class="anchor" href="#user-content-web_interface" id="user-content-web_interface" name="user-content-web_interface" tabindex="-1"><span aria-hidden="true" class="octicon octicon-link"></span></a>web_interface</h3>
+<p>We interface must contain the following:</p>
+<table>
+<thead>
+<tr>
+<th>Key</th>
+<th>Value</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>web_root</td>
+<td>The root of the folder containing the static content for the project's web server, relative to the config file, execcutable,  or absolute. The folder should contain the index.html file supplied with the software to enable the web interface</td>
+<td><code>web_root:  web_files/</code></td>
+</tr>
+<tr>
+<td>port</td>
+<td>The port to server http requests on for the web interface.</td>
+<td><code>web_port:  8080 </code></td>
+</tr>
+<tr>
+<td>admin_logins</td>
+<td>A map of usernames and password for administrators.</td>
+<td>\</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight highlight-source-yaml"><pre><span class="pl-ent">admin_logins</span>:
+    <span class="pl-ent">user1</span>: <span class="pl-s">password1</span>
+    <span class="pl-ent">user2</span>: <span class="pl-s">password2</span>
+<span class="pl-s"><span class="pl-pds">`</span><span class="pl-pds">`</span><span class="pl-pds">`</span> |</span>
+<span class="pl-s"></span>
+<span class="pl-s">Example: </span>
+<span class="pl-s"></span>
+<span class="pl-s"><span class="pl-pds">`</span><span class="pl-pds">`</span><span class="pl-pds">`</span></span><span class="pl-s">yaml</span>
+<span class="pl-ent">extensions</span>: 
+    - <span class="pl-ent">web_interface</span>:
+        <span class="pl-ent">port</span>: <span class="pl-c1">80</span>
+        <span class="pl-ent">web_root</span>: <span class="pl-s">web_root</span>
+        <span class="pl-ent">admin_logins</span>:
+            <span class="pl-ent">Hello</span>: <span class="pl-s">world!</span>
+            <span class="pl-ent">user</span>: <span class="pl-s">password</span></pre></div>
+<h3 id="user-content-power_calc"><a aria-hidden="true" class="anchor" href="#user-content-power_calc" id="user-content-power_calc" name="user-content-power_calc" tabindex="-1"><span aria-hidden="true" class="octicon octicon-link"></span></a>power_calc</h3>
+<p>This optional section contains parameters used to calculate the estimated power consumption of the current setup.  It contains 3 elements:</p>
+<ul>
+<li>
+<code>pixel_idle_watts</code>: The power consumption, in watts, of each pixel.</li>
+<li>
+<code>pixel_full_watts</code>: The power consumption, in watts, of a pixel when turned on to full white.</li>
+<li>
+<code>calc_mode</code>: takes one of two values:
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Explenation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>max_channel_brightness</code></td>
+<td>Power is calculated according to the singke brightest channel of the LED. This is the behavior for WS2815</td>
+</tr>
+<tr>
+<td><code>sum_pixel_brightness</code></td>
+<td>Power is calculate according to all the channels. This is the behavior for WS2812</td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul>
+<p>Example:</p>
+<pre lang="yaml:"><code>extensions:
+    - power_calc:
+        pixel_idle_watts: "3.5 / 150"
+        pixel_full_watts: 0.12
+        calc_mode: max_channel_brightness
 </code></pre>
 </article>
 </div>

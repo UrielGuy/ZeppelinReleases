@@ -1,0 +1,116 @@
+<!-- ?xml version='1.0' encoding='UTF-8'? -->
+<link href="/github-markdown-css/github-css.css" rel="stylesheet"/>
+<meta charset="utf-8" content="text/html"/>
+<div class="gist">
+<style> .gist-file { max-width: 25cm; margin: 0 auto; } </style>
+<style class="formula-style">
+        svg.gh-md-to-html-formula {
+            fill: black;
+        }
+    </style>
+<div class="gist-file"> <!-- This is the class that is responsible for the boxing! -->
+<div class="gist-data">
+<div class="js-gist-file-update-container js-task-list-container file-box">
+<div class="file" id="user-content-article-EasyPixel2">
+<div class="Box-body readme blob js-code-block-container p-5 p-xl-6" id="user-content-file-docker-image-pull-md-readme" style="margin-left: 40px; margin-right: 40px; margin-top: 20px; margin-bottom: 20px">
+<article class="markdown-body entry-content container-lg" itemprop="text">
+<h1 id="user-content-easypixel-22a"><a aria-hidden="true" class="anchor" href="#user-content-easypixel-22a" id="user-content-easypixel-22a" name="user-content-easypixel-22a" tabindex="-1"><span aria-hidden="true" class="octicon octicon-link"></span></a>EasyPixel 2.2a</h1>
+<p>The EasyPixel 2.2 is an LED control board originally built for the LED Zeppelin project, but since reused for many other projects.
+Some of its features are:</p>
+<ul>
+<li>32 LED channels, supporting the WS2812 protocol, with up to 1024 LEDs per channel</li>
+<li>4 power banks, each with 5v to 24v support</li>
+<li>Connector supporting up to 60A per power bank, and up to 10A per LED strip.</li>
+<li>100mbps Ethernet communication</li>
+<li>Support for static as well as DHCP IP assignment</li>
+<li>A fuse for each LED strip</li>
+<li>A test button for each led strip, displaying a test pattern</li>
+<li>A fuse test button, showing the status of all the fuses</li>
+<li>ID configurable by DIP switchs</li>
+</ul>
+<h2 id="user-content-instructions"><a aria-hidden="true" class="anchor" href="#user-content-instructions" id="user-content-instructions" name="user-content-instructions" tabindex="-1"><span aria-hidden="true" class="octicon octicon-link"></span></a>Instructions</h2>
+<h3 id="user-content-configuration"><a aria-hidden="true" class="anchor" href="#user-content-configuration" id="user-content-configuration" name="user-content-configuration" tabindex="-1"><span aria-hidden="true" class="octicon octicon-link"></span></a>Configuration</h3>
+<p>To configure the board, use the 8 position DIP switch next to the computing module. The pins are as follows:</p>
+<table>
+<thead>
+<tr>
+<th>Position</th>
+<th>Function</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>use DHCP when on, static IP when off</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Add 1 to the id of the controller</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Add 2 to the id of the controller</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Add 4 to the id of the controller</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Add 8 to the id of the controller</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Add 16 to the id of the controller</td>
+</tr>
+<tr>
+<td>7</td>
+<td>Add 32 to the id of the controller</td>
+</tr>
+<tr>
+<td>8</td>
+<td>Add 64 to the id of the controller</td>
+</tr>
+</tbody>
+</table>
+<p>Examples:</p>
+<ul>
+<li>DHCP, id is 5: switch on positions 1, 2, and 4</li>
+<li>Static IP, id is 85: switch on positions 2, 4, 6, and 8</li>
+</ul>
+<h3 id="user-content-power"><a aria-hidden="true" class="anchor" href="#user-content-power" id="user-content-power" name="user-content-power" tabindex="-1"><span aria-hidden="true" class="octicon octicon-link"></span></a>Power</h3>
+<p>To power the board, power bank #1 has to be powered. There are a couple of jumers close to strip #1. If the power is 5V, theyr should be
+installed parallel to the short side of the board. If above 5V then parallel to the long side of the board.
+<strong>Getting this wrong will premamnently damage your board!</strong></p>
+<p>Each of the power banks can be supplied with any voltage you want. This voltage will be connected to the power pin for that bank. The
+LED signal is always sent at 5V, through a 120Ω resistor.</p>
+<p>The connector for each power bank is a XT60 connector, rated for 30A continous and 60A peak power supply.</p>
+<h3 id="user-content-fuses"><a aria-hidden="true" class="anchor" href="#user-content-fuses" id="user-content-fuses" name="user-content-fuses" tabindex="-1"><span aria-hidden="true" class="octicon octicon-link"></span></a>Fuses</h3>
+<p>Each led channel is fused with a mini automotive fuse, with a default of 10A, matching the rating of the JST-VH connectors used for each
+stip. You can change those to other, lower values if you have a different limitation in your setup, such as 3A JST-SM connectors (as many
+LED strips come with).</p>
+<p>To test the fuses, press the button next to each XT60 connector to see a green LED light up for each intact fuse.</p>
+<h3 id="user-content-testing"><a aria-hidden="true" class="anchor" href="#user-content-testing" id="user-content-testing" name="user-content-testing" tabindex="-1"><span aria-hidden="true" class="octicon octicon-link"></span></a>Testing</h3>
+<p>Next to each strip there is a test switch. Turning the switch on will cause the strip to light up with a moving pattern lighting up every
+10th LED. On some older versions this only works if the board detects a network connection to begin with. While in test mode, a red LED
+will light next to the connector for the proper strip.</p>
+<h3 id="user-content-troubleshooting"><a aria-hidden="true" class="anchor" href="#user-content-troubleshooting" id="user-content-troubleshooting" name="user-content-troubleshooting" tabindex="-1"><span aria-hidden="true" class="octicon octicon-link"></span></a>Troubleshooting</h3>
+<ul>
+<li>
+<p>The LEDs update in a choppy way, starting and stopping every second or so - check that there is only a single controller with a given ID
+on the network. Having multiple controller with the same ID will cause the software to alternate between them, causing both to look choppy.</p>
+</li>
+<li>
+<p>My LED strip wont light up - First, press the fuse test button and see hte green LED lights up next to the strip to indicate there is power.
+Next, press the test button and see if the strip lights up then. If so, this is probably a configuration issue, or the curent mode has this
+strip as "black". If it still hasn't lit up, try a different LED strip at the end of the cable. If that one lights up, the LED strip is faulty
+If it stil doesn't light up, the cable you are using is porbably faulty, so please replace that.</p>
+</li>
+</ul>
+</article>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>

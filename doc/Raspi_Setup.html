@@ -14,9 +14,9 @@
 <div class="file" id="user-content-article-Raspi_Setup">
 <div class="Box-body readme blob js-code-block-container p-5 p-xl-6" id="user-content-file-docker-image-pull-md-readme" style="margin-left: 40px; margin-right: 40px; margin-top: 20px; margin-bottom: 20px">
 <article class="markdown-body entry-content container-lg" itemprop="text">
-<h1 id="user-content-setting-up-a-raspberry-pi"><a aria-hidden="true" class="anchor" href="#user-content-setting-up-a-raspberry-pi" id="user-content-setting-up-a-raspberry-pi" name="user-content-setting-up-a-raspberry-pi"><span aria-hidden="true" class="octicon octicon-link"></span></a>Setting up a Raspberry Pi</h1>
+<h1 id="user-content-setting-up-a-raspberry-pi"><a aria-hidden="true" class="anchor" href="#user-content-setting-up-a-raspberry-pi" id="user-content-setting-up-a-raspberry-pi" name="user-content-setting-up-a-raspberry-pi" tabindex="-1"><span aria-hidden="true" class="octicon octicon-link"></span></a>Setting up a Raspberry Pi</h1>
 <p>This document will help you set up a Raspberry Pi for running a project.</p>
-<h2 id="user-content-requirements"><a aria-hidden="true" class="anchor" href="#user-content-requirements" id="user-content-requirements" name="user-content-requirements"><span aria-hidden="true" class="octicon octicon-link"></span></a>Requirements</h2>
+<h2 id="user-content-requirements"><a aria-hidden="true" class="anchor" href="#user-content-requirements" id="user-content-requirements" name="user-content-requirements" tabindex="-1"><span aria-hidden="true" class="octicon octicon-link"></span></a>Requirements</h2>
 <ul>
 <li>A Raspberry Pi 3B or up.  We recommend a Raspberry Pi 4 with at least 4GB of memory</li>
 <li>A USB Ethernet dongle</li>
@@ -25,7 +25,7 @@
 <li>A MicroSD card. We like 32GB SanDisk Ultra</li>
 <li>A screen, mouse and keyboard capable of connecting to your Raspberry Pi</li>
 </ul>
-<h2 id="user-content-installing-the-raspberry-pi"><a aria-hidden="true" class="anchor" href="#user-content-installing-the-raspberry-pi" id="user-content-installing-the-raspberry-pi" name="user-content-installing-the-raspberry-pi"><span aria-hidden="true" class="octicon octicon-link"></span></a>Installing the Raspberry Pi</h2>
+<h2 id="user-content-installing-the-raspberry-pi"><a aria-hidden="true" class="anchor" href="#user-content-installing-the-raspberry-pi" id="user-content-installing-the-raspberry-pi" name="user-content-installing-the-raspberry-pi" tabindex="-1"><span aria-hidden="true" class="octicon octicon-link"></span></a>Installing the Raspberry Pi</h2>
 <ul>
 <li>Download and install the <a href="https://www.raspberrypi.com/software/" rel="nofollow">Raspberry Pi Imager</a>
 </li>
@@ -42,12 +42,12 @@
 </li>
 <li>Select <code>Finish</code> and <strong>DO NOT REBOOT YET</strong>
 </li>
-<li>Run <code>ipconfig</code> and find the IP you have connected to your network over your Ethernet cable</li>
+<li>Run <code>ifconfig</code> and find the IP you have connected to your network over your Ethernet cable</li>
 <li>On a machine with the scripts,run the <code>setup_raspi.sh</code> script, with the IP address as a parameter. Example:
 <div class="highlight highlight-source-shell"><pre>./raspi_setup.sh 10.23.0.113</pre></div>
 Please type your password if needed, and answer <code>yes</code> to any questions</li>
 </ul>
-<h2 id="user-content-setting-you-project-up"><a aria-hidden="true" class="anchor" href="#user-content-setting-you-project-up" id="user-content-setting-you-project-up" name="user-content-setting-you-project-up"><span aria-hidden="true" class="octicon octicon-link"></span></a>Setting you project up</h2>
+<h2 id="user-content-setting-you-project-up"><a aria-hidden="true" class="anchor" href="#user-content-setting-you-project-up" id="user-content-setting-you-project-up" name="user-content-setting-you-project-up" tabindex="-1"><span aria-hidden="true" class="octicon octicon-link"></span></a>Setting you project up</h2>
 <p>Once installed, the raspberry pi will run with a default wifi network and project. To use your own:</p>
 <ul>
 <li>Make sure the raspberry pi is turned off, and connect the MicroSD card to your computer.</li>
@@ -84,15 +84,15 @@ can be edited, for things like making the wifi open, or changing the channel. So
 </ul>
 </li>
 </ul>
-<h2 id="user-content-field-operation"><a aria-hidden="true" class="anchor" href="#user-content-field-operation" id="user-content-field-operation" name="user-content-field-operation"><span aria-hidden="true" class="octicon octicon-link"></span></a>Field Operation</h2>
+<h2 id="user-content-field-operation"><a aria-hidden="true" class="anchor" href="#user-content-field-operation" id="user-content-field-operation" name="user-content-field-operation" tabindex="-1"><span aria-hidden="true" class="octicon octicon-link"></span></a>Field Operation</h2>
 <p>To use the newly installed Raspberry Pi, it should be connected to powe via the standard connector (USB C for RPi4, Micro USB for RPi3), and a network cable
 to the built in network port on the raspberry Pi, to the network where the LED controllers are installed.
 To update the software, just connect the raspberry pi to the internet using a USB ethernet cable and boot it. It will download the latest release and lunch it.
 <strong>Make sure to verify that your config file is still supported by the new version!</strong></p>
-<h2 id="user-content-recommendations"><a aria-hidden="true" class="anchor" href="#user-content-recommendations" id="user-content-recommendations" name="user-content-recommendations"><span aria-hidden="true" class="octicon octicon-link"></span></a>Recommendations</h2>
+<h2 id="user-content-recommendations"><a aria-hidden="true" class="anchor" href="#user-content-recommendations" id="user-content-recommendations" name="user-content-recommendations" tabindex="-1"><span aria-hidden="true" class="octicon octicon-link"></span></a>Recommendations</h2>
 <ul>
 <li>We recommend putting the Raspberry Pi in <a href="https://www.amazon.com/gp/product/B096SBN7QS/ref=ppx_yo_dt_b_search_asin_title?ie=UTF8&amp;th=1" rel="nofollow">ths case</a>.
-Block any unused ports with either [these)(<a href="https://www.amazon.com/DSLRKIT-Anti-Dust-Raspberry-Stopper-Cover/dp/B07ZH2DFPZ/ref=sr_1_3?crid=1BQVMRA8P0X1C&amp;keywords=raspberry+pi+silicone&amp;qid=1688141092&amp;s=electronics&amp;sprefix=raspberry+pi+silicone%2Celectronics%2C112&amp;sr=1-3" rel="nofollow">https://www.amazon.com/DSLRKIT-Anti-Dust-Raspberry-Stopper-Cover/dp/B07ZH2DFPZ/ref=sr_1_3?crid=1BQVMRA8P0X1C&amp;keywords=raspberry+pi+silicone&amp;qid=1688141092&amp;s=electronics&amp;sprefix=raspberry+pi+silicone%2Celectronics%2C112&amp;sr=1-3</a>)
+Block any unused ports with either <a href="https://www.amazon.com/DSLRKIT-Anti-Dust-Raspberry-Stopper-Cover/dp/B07ZH2DFPZ/ref=sr_1_3?crid=1BQVMRA8P0X1C&amp;keywords=raspberry+pi+silicone&amp;qid=1688141092&amp;s=electronics&amp;sprefix=raspberry+pi+silicone%2Celectronics%2C112&amp;sr=1-3" rel="nofollow">these</a>
 or with tape</li>
 <li>Do not use the same name/password combination for both the wifi and the OS, to make sure no one messes with your system more than they should.</li>
 <li>Write down and keep safe:
