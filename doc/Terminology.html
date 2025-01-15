@@ -14,35 +14,35 @@
 <div class="file" id="user-content-article-Terminology">
 <div class="Box-body readme blob js-code-block-container p-5 p-xl-6" id="user-content-file-docker-image-pull-md-readme" style="margin-left: 40px; margin-right: 40px; margin-top: 20px; margin-bottom: 20px">
 <article class="markdown-body entry-content container-lg" itemprop="text">
-<h1 id="user-content-terminology"><a aria-hidden="true" class="anchor" href="#user-content-terminology" id="user-content-terminology" name="user-content-terminology" tabindex="-1"><span aria-hidden="true" class="octicon octicon-link"></span></a>Terminology</h1>
+<div class="markdown-heading"><h1 class="heading-element">Terminology</h1><a aria-label="Permalink: Terminology" class="anchor" href="#user-content-terminology" id="user-content-terminology" name="user-content-terminology"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
 <p>This document cover some of the basic concepts in the world of the Zeppeln control software.</p>
-<h2 id="user-content-pixel"><a aria-hidden="true" class="anchor" href="#user-content-pixel" id="user-content-pixel" name="user-content-pixel" tabindex="-1"><span aria-hidden="true" class="octicon octicon-link"></span></a>Pixel</h2>
+<div class="markdown-heading"><h2 class="heading-element">Pixel</h2><a aria-label="Permalink: Pixel" class="anchor" href="#user-content-pixel" id="user-content-pixel" name="user-content-pixel"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
 <p>A pixel is a light source that can be controleld by the software. It can be a single LED on an LED strip,
 A group of LEDs controlled together (such as a 60 LED but 20 pixel strip), a flood light, a theater light, etc.</p>
-<h2 id="user-content-controller"><a aria-hidden="true" class="anchor" href="#user-content-controller" id="user-content-controller" name="user-content-controller" tabindex="-1"><span aria-hidden="true" class="octicon octicon-link"></span></a>Controller</h2>
+<div class="markdown-heading"><h2 class="heading-element">Controller</h2><a aria-label="Permalink: Controller" class="anchor" href="#user-content-controller" id="user-content-controller" name="user-content-controller"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
 <p>A controller is a piece of hardware that connects to a network (either ethernet or WiFi) on one end, and to some pixels
 on the other side. At the time of the writing of this document the only well supported contrller is the EasyPixel V2.2
 board, made for our software</p>
-<h2 id="user-content-scene"><a aria-hidden="true" class="anchor" href="#user-content-scene" id="user-content-scene" name="user-content-scene" tabindex="-1"><span aria-hidden="true" class="octicon octicon-link"></span></a>Scene</h2>
+<div class="markdown-heading"><h2 class="heading-element">Scene</h2><a aria-label="Permalink: Scene" class="anchor" href="#user-content-scene" id="user-content-scene" name="user-content-scene"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
 <p>A scene is a collection of all of the pixel known to the system, with the knowledge of how they are connected to the
 setup. It also contains a list of modes and extensions to load and optionally a list of zone divisions.</p>
-<h2 id="user-content-mode"><a aria-hidden="true" class="anchor" href="#user-content-mode" id="user-content-mode" name="user-content-mode" tabindex="-1"><span aria-hidden="true" class="octicon octicon-link"></span></a>Mode</h2>
+<div class="markdown-heading"><h2 class="heading-element">Mode</h2><a aria-label="Permalink: Mode" class="anchor" href="#user-content-mode" id="user-content-mode" name="user-content-mode"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
 <p>A mode is a piece of code that recieves a zone (a set of pixels), looks at their parameters (location in space, how they're
 connected to the setup, etc.) and outputs their color. A mode may expose its own parameters to control how it makes its
 decisions.</p>
-<h2 id="user-content-zone"><a aria-hidden="true" class="anchor" href="#user-content-zone" id="user-content-zone" name="user-content-zone" tabindex="-1"><span aria-hidden="true" class="octicon octicon-link"></span></a>Zone</h2>
+<div class="markdown-heading"><h2 class="heading-element">Zone</h2><a aria-label="Permalink: Zone" class="anchor" href="#user-content-zone" id="user-content-zone" name="user-content-zone"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
 <p>A zone is a subset of the pixel in a scene. It could be things like Front, or center, or body. They are defined in the
 <a href="Configuration.md">Configuration</a> by a set of rules. Each zone is assigned a mode to control its pixels' colors.</p>
-<h2 id="user-content-zone-division"><a aria-hidden="true" class="anchor" href="#user-content-zone-division" id="user-content-zone-division" name="user-content-zone-division" tabindex="-1"><span aria-hidden="true" class="octicon octicon-link"></span></a>Zone Division</h2>
+<div class="markdown-heading"><h2 class="heading-element">Zone Division</h2><a aria-label="Permalink: Zone Division" class="anchor" href="#user-content-zone-division" id="user-content-zone-division" name="user-content-zone-division"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
 <p>A set of zones. This is what the user selects to say which set of zones is active. Things pairs like Body/Zeppelin or
 Front/Back</p>
-<h2 id="user-content-parameter"><a aria-hidden="true" class="anchor" href="#user-content-parameter" id="user-content-parameter" name="user-content-parameter" tabindex="-1"><span aria-hidden="true" class="octicon octicon-link"></span></a>Parameter</h2>
+<div class="markdown-heading"><h2 class="heading-element">Parameter</h2><a aria-label="Permalink: Parameter" class="anchor" href="#user-content-parameter" id="user-content-parameter" name="user-content-parameter"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
 <p>A Parameter is a value with a name within the system that can be changed to control the behavior of some element of the system.
 Parameters can be exposed by modes, extensions, and some are internal to the system. They are controlled and changed by a type
 of extensions named User Interfaces, such as the OpenGl renderer on screen, the command line user interface, or the web
 interfce.</p>
 <p>Parameters can be of a few types: An integer, a decimal number, a color, a value of an enumeration, a string or a boolean.</p>
-<h2 id="user-content-extensions"><a aria-hidden="true" class="anchor" href="#user-content-extensions" id="user-content-extensions" name="user-content-extensions" tabindex="-1"><span aria-hidden="true" class="octicon octicon-link"></span></a>Extensions</h2>
+<div class="markdown-heading"><h2 class="heading-element">Extensions</h2><a aria-label="Permalink: Extensions" class="anchor" href="#user-content-extensions" id="user-content-extensions" name="user-content-extensions"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
 <p>An extension is a piece of code that extends the capabilities of the software. It could be something to support more
 functionality. Examples of extensions are the EasyPixel 2.2 driver, the web interface, the power calculations plugin.
 There are 3 types of extensions (where an extension can satisfy the requirements for more than on type):</p>
@@ -54,7 +54,7 @@ for displaying on the screen or the driver for the EasyPixel controller for send
 <li>A tick generator - An extensions that notifies the system that it's time to generate another frame. An example is the
 3D Renderer which creates a frame whenever the operating system asks for the next frame.</li>
 </ul>
-<h2 id="user-content-favorites"><a aria-hidden="true" class="anchor" href="#user-content-favorites" id="user-content-favorites" name="user-content-favorites" tabindex="-1"><span aria-hidden="true" class="octicon octicon-link"></span></a>Favorites</h2>
+<div class="markdown-heading"><h2 class="heading-element">Favorites</h2><a aria-label="Permalink: Favorites" class="anchor" href="#user-content-favorites" id="user-content-favorites" name="user-content-favorites"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
 <p>A favorite is a set of values in parameters, allowing to save a specific setting in the system and restoring it quickly.</p>
 </article>
 </div>
